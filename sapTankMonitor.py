@@ -39,7 +39,21 @@ st.subheader('Current Volume')
 #st.text(volumes[-1])
 if st.button('Reload Data'):
     st.legacy_caching.clear_cache()
+    
+#plot volume data
+fig2, ax3 = plt.subplots()
+lns3 = ax3.plot(times, volumes, color, label = 'Volume')
+ax3.set_xlabel('Time')
+ax3.set_ylabel('Volume (gallons)')
+ax3.set_ylim(bottom = 0,top = None, auto = True)
+ax3.set_xticklabels(ax.get_xticks(), rotation = 90)
 
+labs1 = [l.get_label() for l in lns3]
+ax3.legend(lns3, labs1, loc=0)
+
+st.pyplot(fig2)
+
+#plot combined temperature and volume data
 st.subheader('Chart')
 fig, ax = plt.subplots()
 lns1 = ax.plot(times, volumes, color, label = 'Volume')
