@@ -45,7 +45,7 @@ if st.button('Reload Data'):
     
 #plot volume data
 fig2, ax3 = plt.subplots()
-lns3 = ax3.plot(times, moving_average(volumes,5), color, label = 'Volume')
+lns3 = ax3.plot(times, volumes, color, label = 'Volume')
 ax3.set_xlabel('Time')
 ax3.set_ylabel('Volume (gallons)')
 ax3.set_ylim(bottom = 0,top = None, auto = True)
