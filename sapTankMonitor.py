@@ -6,6 +6,12 @@ import matplotlib.dates
 import pyodbc
 import pytz
 
+st.set_page_config(
+    page_title="Sap Tank Monitor",
+    page_icon=":maple_leaf:",
+    layout="centered"
+    )
+
 st.title('Sap Tank Monitor')
 
 server = st.secrets["db_server"]
@@ -32,6 +38,7 @@ def plotAll(volumes, temps, times):
     if st.button('Reload Data'):
         st.legacy_caching.clear_cache()
         
+
     #plot volume data
     st.subheader('Volume Over Last 48 Hours')
     fig2, ax3 = plt.subplots()
