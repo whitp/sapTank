@@ -97,7 +97,7 @@ def main():
     displayStats(current_time, 
         temps[-1],  temps[-1]-temps[-2],
         volumes[-1], volumes[-1]-volumes[-2],
-        volumes[-1]-volumes[-6]*2,volumes[-6]-volumes[-11]*2)
+        (volumes[-1]-volumes[-6])*2,(volumes[-6]-volumes[-11])*2)
 
     plotAll(volumes, temps, times)
 
